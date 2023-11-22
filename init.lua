@@ -287,6 +287,18 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
+-- Yank into system clipboard
+vim.keymap.set({'n', 'v'}, '<leader>y', '"+y') -- yank motion
+vim.keymap.set({'n', 'v'}, '<leader>Y', '"+Y') -- yank line
+
+-- Delete into system clipboard
+vim.keymap.set({'n', 'v'}, '<leader>d', '"+d') -- delete motion
+vim.keymap.set({'n', 'v'}, '<leader>D', '"+D') -- delete line
+
+-- Paste from system clipboard
+vim.keymap.set('n', '<leader>p', '"+p')  -- paste after cursor
+vim.keymap.set('n', '<leader>P', '"+P')  -- paste before cursor
+
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
