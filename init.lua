@@ -202,6 +202,9 @@ vim.keymap.set({ 'n', 'v' }, '<leader>D', '"+D') -- delete line
 vim.keymap.set('n', '<leader>p', '"+p') -- paste after cursor
 vim.keymap.set('n', '<leader>P', '"+P') -- paste before cursor
 
+-- Enable truecolor support
+vim.opt.termguicolors = true
+
 if vim.loader then
   vim.loader.enable()
 end
